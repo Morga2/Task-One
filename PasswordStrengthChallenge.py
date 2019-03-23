@@ -41,7 +41,7 @@ strength = ""
 
 # Get the password from user
 
-password = raw_input("Enter a password:")
+password = input("Enter a password:")
 
 # Test password for length - greater than or equal to 8
 
