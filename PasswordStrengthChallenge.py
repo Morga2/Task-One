@@ -1,19 +1,19 @@
-# Test Password Strength
+# Password Strength Challenge By Morgan Wells
 
 # Input: Password as String
 # Outputs: 
 #  1) Is Password Valid
 #  2) What is the Password Strenth - Poor Strength, Good Strength, Excellent Strength
 #  3) Message, Error and what criteria is not met, or success message
-#
-#  
+
+ 
 # References: Python Standard Library https://docs.python.org/3/library/stdtypes.html#str.isdigit
 #             Python for Beginners https://www.youtube.com/watch?v=rfscVS0vtbw  
 #             Regular Expressions https://regexr.com/
 #             Python Tutorial https://www.w3schools.com/python/default.asp
 #             What makes a password strong https://www.technologyreview.com/s/542576/youve-been-misled-about-what-makes-a-good-password/
 #             Problem caculating length https://www.reddit.com/r/learnprogramming/comments/2g3l40/python_len_returns_the_wrong_value_while_working/
-#
+
 #   Tests:
 #       Good Password: A1#fdsadfsfd
 #       Bad Password: a1#fdsadfsfd - No capitals
@@ -25,9 +25,6 @@
 #       Poor Strength: A1#fdsad
 #       Good Strength: A1#fdsadfsf
 #       Excellent Strength: A1#fdsadfsfd12ffws2
-
-
-# Import Modules Used 
 
 # Need Regular Expressions Module
 import re
@@ -41,7 +38,8 @@ strength = ""
 
 # Get the password from user
 
-password = input("Enter a password:")
+password = input("Enter a password:") #capturing the password that the user is typing and putting it into the password conatiner
+
 
 # Test password for length - greater than or equal to 8
 
@@ -51,13 +49,11 @@ if (len(password.strip()) < 8):
     is_valid = False
     errors.append("Password is less than 8 characters")
 
-
 # Test Password - no white space
 
 if (password.isspace()):
     is_valid = False
     errors.append("Password has Whote Space")
-
 
 # Test Password - At least one upper case letter
 
@@ -83,13 +79,11 @@ if ((not (re.search("[^a-zA-Z0-9\s]", password)))): # Test using Regular Express
     is_valid = False
     errors.append("Password has no symbol") 
 
-
 # Test Password - Only allowed Symbols - $ # - _ & %
 
 if ((not (re.search("[$#\-_&%]", password)))):
     is_valid = False
     errors.append("Password has no corerct symbol - $ # - _ & $")
-
 
 # Work out password strength
 
@@ -97,7 +91,6 @@ if ((not (re.search("[$#\-_&%]", password)))):
 #   Poor Password has only 8 length
 #   Good Password has between 8-12 Length
 #   Excellent Password has more than 12
-
 
 if (len(password.strip()) == 8):
     strength = "poor strength"
@@ -112,7 +105,6 @@ if(is_valid == True):
     print("Password is valid")
 else:
     print("Password is not valid")
-
 
 # If Valid - Tell User Password Strength
 
