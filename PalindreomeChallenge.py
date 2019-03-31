@@ -1,46 +1,46 @@
-# Palindreome Challenge By Morgan Wells
+# Palindrome Challenge By Morgan Wells
 
-# Input: User enters a word that they want to know if its a palindreome (entry of word)
-# Output: 1) A palindreome ("This is a palindreome") 
-#         2) Not a palidreome ("This word is not a pallindrome")
+# Input: User enters a word that they want to know if its a palindrome (entry of word)
+# Output: 1) A palindrome ("This is a palindrome") 
+#         2) Not a palindrome ("This word is not a pallindrome")
 #         3) Error 
 
-# References: Reverse a string in Python, Available At: https://stackoverflow.com/ Acessed: 30-3-19 
+# Reference: Reverse a string in Python, (n.d.) Available At: https://stackoverflow.com/questions/931092/reverse-a-string-in-python Accessed: 30-3-19 
 
 # Data Tests:
-#           Bad Tests (Not a palindreome): Cat, Nap, hello, goodbye 
-#           Good Tests (a palindreome): rotor, Rotor
+#           Bad Tests (Not a palindrome): Cat, Nap, hello, goodbye 
+#           Good Tests (a palindrome): rotor, Rotor
 #           Error (somethings wrong): Hell o
          
-# import modules
+# Imported Modules:
 
-import re # Regular Expressions is a module that has a set of commmands to help you with regular expresssions
+import re # This is a module that has a set of commands to help you with regular expressions
 
-# Set Variables
+# Setting Variables:
 
 input_word = "" # input_word is the variable to store the users word to test
 
-# Get the user input
+# Getting the user input:
 
-input_word = input("Enter a word: ") # capturing the word that the user is typing and putting it into the input_word conatiner
+input_word = input("Enter a word: ") # Capturing the word that the user is typing and putting it into the input_word container
 
-# Check for spaces or non A to Z charceetrs
+# Checking for spaces or non A to Z characters:
 
-pattern = re.compile('[^a-zA-Z]') # creating a regular expreesion that tests for anything that isnt a letter
+pattern = re.compile('[^a-zA-Z]') # Here I am creating a regular expreesion that tests for anything that inst a letter
 if (pattern.findall(input_word)):
     print('The word must contain only letters not numbers, spaces or characters')
 
-# convert all to lowercase letters
+# Converting all to lowercase letters:
 
-lowercase_word = input_word.lower() # taking the input_word changing this to lower case and then putting it into the lowercase_ word
+lowercase_word = input_word.lower() # Taking the input_word changing this to lower case and then putting it into the lowercase_ word
 
-# Reverse the input 
+# Reversing the input:
 
 reverse_word = lowercase_word[::-1] # Reversing the characters of the word in the string lowercase_word
 
-# Test to see if input equals reverse of input 
+# Testing to see if input equals reverse of input: 
 
-if (lowercase_word == reverse_word): # comparing whats in the lowercase_word contanier and the reverse_word contanier to see if its a palindreaome
+if (lowercase_word == reverse_word): # Comparing whats in the lowercase_word container and the reverse_word container to see if its a palindrome
     print("This word is a pallindrome")
 else: 
     print("This word is not a pallindrome")

@@ -1,28 +1,36 @@
-# Ceaser Cipher By Morgan Wells
+# Caesar Cipher By Morgan Wells
 
-# Input:  1) Enter text to code
-#         2) Are you going from plain text to cipher [Y] or cipher to plain text [N]
-# Output: 1) [Y]: Ciopher code
+# Input:  1) Entering text to code
+#         2) Going from from plain text to cipher [Y] or cipher to plain text [N]
+# Output: 1) [Y]: Cipher code
 #         2) [N]: Plain text
 
 # References:
 
-# Reverse a string in Python, Available At: https://stackoverflow.com/ Acessed: 30-3-19
-# Is there a "not equal" operator in Python?, Available At: https://stackoverflow.com/ Acessed: 30-3-19
-# User Input to Choose from Dictionary, Available At: http://python-forum.io Acessed: 30-3-19 
-# How to let the user select an input from a finite list?, Available At: https://stackoverflow.com/ Acessed: 30-3-19
-# How to use list as source of selection for user input?, Available At: https://stackoverflow.com/ Acessed: 30-3-19
-# Get key by value in dictionary, Available At: https://stackoverflow.com/ Acessed: 30-3-19
-# Python Conditions, Available At: http://www.w3schools.com Acessed: 30-3-19
-# Iterating each character in a string using Python, Available At: https://stackoverflow.com/ Acessed: 30-3-19
-# Is there a 'foreach' function in Python 3?, Available At: https://stackoverflow.com/ Acessed: 30-3-19
-# Python Hash Table Implementation - Code Review Stack Exchange, Available At: https://codereview.stackexchange.com/ Acessed: 30-3-19
-# Algorithm - How do Python dictionary hash lookups work?, Available At: https://stackoverflow.com/ Acessed: 30-3-19
-# Dictionary - Python variables as keys to dict, Available At: https://stackoverflow.com/ Acessed: 30-3-19
+# Reverse a string in Python, (n.d.) Available At: https://stackoverflow.com/questions/931092/reverse-a-string-in-python Accessed: 30-3-19
+# Is there a "not equal" operator in Python?, (n.d.) Available At: https://stackoverflow.com/questions/11060506/is-there-a-not-equal-operator-in-python Accessed: 30-3-19
+# User Input to Choose from Dictionary, (n.d.) Available At: https://python-forum.io/Thread-User-Input-to-Choose-from-Dictionary Accessed: 30-3-19  
+# How to let the user select an input from a finite list?, (n.d.) Available At: https://stackoverflow.com/questions/37565793/how-to-let-the-user-select-an-input-from-a-finite-list/37567304 Accessed: 30-3-19
+# How to use list as source of selection for user input?, (n.d.) Available At: https://stackoverflow.com/questions/28425204/python-how-to-use-list-as-source-of-selection-for-user-input Accessed: 30-3-19
+# Get key by value in dictionary, (n.d.) Available At: https://stackoverflow.com/questions/8023306/get-key-by-value-in-dictionary Accessed: 30-3-19
+# Python Conditions, (n.d.) Available At: https://www.w3schools.com/python/python_conditions.asp Accessed: 30-3-19
+# Iterating each character in a string using Python, (n.d.) Available At: https://stackoverflow.com/questions/538346/iterating-each-character-in-a-string-using-python Accessed: 30-3-19
+# Is there a 'foreach' function in Python 3?, (n.d.) Available At: https://stackoverflow.com/questions/18294534/is-there-a-foreach-function-in-python-3 Accessed: 30-3-19
+# Python Hash Table Implementation - Code Review Stack Exchange, (n.d.) Available At: https://codereview.stackexchange.com/questions/118110/python-hash-table-implementation Accessed: 30-3-19
+# How do Python dictionary hash lookups work?, (n.d.) Available At: https://stackoverflow.com/questions/6605279/how-do-python-dictionary-hash-lookups-work Accessed: 30-3-19
+# Python variables as keys to dict, (n.d.) Available At: https://stackoverflow.com/questions/3972872/python-variables-as-keys-to-dict Accessed: 30-3-19
 
-# Data Test
+# Data Tests:
 
-# Create the cipher tables
+# Good Tests: 
+# (cipher to plain text)
+#   hello world         
+#   HELLO WORLD
+# (plain text to cipher)
+#   khoor zruog
+#   KHOOR ZRUOG
+
+# Cipher Tables:
 
 ciphertableupper= {
     'A': 'D',
@@ -82,14 +90,14 @@ ciphertablelower= {
     'z': 'c'
 }           
 
-# Set Variable
+# Seting Variables:
 
 cipherchar = ""
 inputstring = ""
 result = ""
 char = ""
 
-# Define Functions
+# Defining Functions:
 
 def processcipher(char):
 
@@ -109,12 +117,12 @@ def reverseprocesscipher(char):
     else:
         return char
 
-# Capture the input string
+# Capturing the input string:
 
 inputstring = input('Enter text to code: ')
 direction = input('Are you going from plain text to cipher [Y] or cipher to plain text [N] : ')
 
-# loop throuigh each cahrater in the input string
+# looping through each character in the input string:
 
 for char in inputstring:
     if (direction == 'Y'):
@@ -123,6 +131,6 @@ for char in inputstring:
         result = reverseprocesscipher(char)
     cipherchar = cipherchar + result 
     
-# Print out cipher string
+# Printing out cipher string:
 
 print(cipherchar)
