@@ -35,7 +35,7 @@
 import re # I imported a regular expression package to help me find strings or sets of strings
 import sys # lets me exist program
 
-# Module and function to let me print out in colour and bold
+# Module and function to let me print out in colour and bold (Jupyter only)
 from IPython.display import Markdown, display
 def printmd(string):
     display(Markdown(string))
@@ -58,8 +58,8 @@ FullEmail = input("Enter Email Address: ")
 pattern = re.compile(r'@') # re.compile is a command from the re module we imported earlier, used to create a regular expression
 if (not(pattern.findall(FullEmail))): # Test if the @ symbol is in the email address
     is_valid = False # If you cant find the @ in the email then set valid flag to false (using this container to tell us when something has gone wrong)
-    printmd("<p style='color:red'><b>Email is invalid</b><p>") # Tell the user the email is invalid
-    printmd ("<p style='color:red'>Cant continue - Email address should have a @ symbol - Please try again<p>") # I have to end the program as the rest wont work without a @ symbol
+    print("Email is invalid") # Tell the user the email is invalid
+    print ("Cant continue - Email address should have a @ symbol - Please try again") # I have to end the program as the rest wont work without a @ symbol
     sys.exit()
     quit()
     
@@ -129,4 +129,5 @@ else:
 
 if(is_valid == False):
     print("This was not valid because:")
-    print(errors) # If email address inst valid, print out errors.
+    for error in errors:
+        print(error) # If email address inst valid, print out errors.

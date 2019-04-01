@@ -114,5 +114,6 @@ if (is_valid == True):
 # If Invalid, tell them there is an error and what is wrong:
 
 if(is_valid == False):
-    print(errors)
+    for error in errors:
+        print(error)
 
