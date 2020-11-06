@@ -1,5 +1,4 @@
-# Task-One
-Task One - Coding Problems
+# Coding Challenges
 
 This repo contains:
 
